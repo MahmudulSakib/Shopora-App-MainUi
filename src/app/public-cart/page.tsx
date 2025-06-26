@@ -13,6 +13,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
+export const metadata = {
+  title: "Cart",
+};
+
 type CartItem = {
   productId: string;
   name: string;

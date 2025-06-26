@@ -11,6 +11,10 @@ import { Separator } from "@/components/ui/separator";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
 
+export const metadata = {
+  title: "Category Base Products",
+};
+
 type Product = {
   id: string;
   name: string;

@@ -10,6 +10,10 @@ import { Menu, X } from "lucide-react";
 import NavMenu from "@/components/NavMenu";
 import { items } from "@/constants/ProfileSidebarItems";
 
+export const metadata = {
+  title: "Orders",
+};
+
 type Order = {
   id: string;
   trackingId: string;

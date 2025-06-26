@@ -10,6 +10,10 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
+export const metadata = {
+  title: "Checkout",
+};
+
 type CartItem = {
   productId: string;
   name: string;
@@ -116,7 +120,6 @@ const Checkout = () => {
 
         const { sessionUrl } = res.data;
 
-        // Redirect to Stripe checkout
         window.location.href = sessionUrl;
       }
     } catch (err) {
@@ -129,7 +132,6 @@ const Checkout = () => {
 
   return (
     <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8 border p-6 rounded-xl shadow">
-      {/* Left: Shipping Form */}
       <div className="space-y-6">
         <h2 className="text-2xl font-bold">Shipping Information</h2>
 

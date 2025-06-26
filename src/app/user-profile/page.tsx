@@ -13,6 +13,10 @@ import { Menu, X } from "lucide-react";
 import NavMenu from "@/components/NavMenu";
 import { items } from "@/constants/ProfileSidebarItems";
 
+export const metadata = {
+  title: "Profile",
+};
+
 type ProfileData = {
   fullName: string;
   phone: string;

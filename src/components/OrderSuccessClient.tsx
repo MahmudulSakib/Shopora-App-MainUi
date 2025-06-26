@@ -25,7 +25,7 @@ const OrderSuccessClient = () => {
         </div>
       )}
       <div className="flex gap-4">
-        <Link href="/profile">
+        <Link href="/user-orders">
           <Button variant="outline">View My Orders</Button>
         </Link>
         <Link href="/">
