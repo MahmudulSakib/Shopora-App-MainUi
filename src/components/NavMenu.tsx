@@ -153,26 +153,27 @@ const NavMenu = () => {
         </div>
 
         <div className="flex items-center gap-3">
-          {user ? (
-            <Link href="/profile">
-              <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 text-white flex items-center justify-center font-bold">
-                {user.email.charAt(0).toUpperCase()}
-              </div>
-            </Link>
-          ) : (
-            <>
-              <Link href="/log-in">
-                <ShimmerButton>
-                  <span>Log In</span>
-                </ShimmerButton>
+          {!loading &&
+            (user ? (
+              <Link href="/profile">
+                <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 text-white flex items-center justify-center font-bold">
+                  {user.email.charAt(0).toUpperCase()}
+                </div>
               </Link>
-              <Link href="/sign-up">
-                <ShimmerButton>
-                  <span>Sign Up</span>
-                </ShimmerButton>
-              </Link>
-            </>
-          )}
+            ) : (
+              <>
+                <Link href="/log-in">
+                  <ShimmerButton>
+                    <span>Log In</span>
+                  </ShimmerButton>
+                </Link>
+                <Link href="/sign-up">
+                  <ShimmerButton>
+                    <span>Sign Up</span>
+                  </ShimmerButton>
+                </Link>
+              </>
+            ))}
 
           <div
             className="relative cursor-pointer"
