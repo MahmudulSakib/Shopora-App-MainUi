@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
 import { toast } from "sonner";
-import { MessageCircle, Send, ArrowDown } from "lucide-react";
+import { MessageCircle, Send, ArrowDown, Loader2 } from "lucide-react";
 
 const socket = io("https://shopora-backend-deploy.onrender.com");
 
@@ -106,9 +106,14 @@ export default function UserChat() {
     <>
       <Button
         onClick={handleClickChatIcon}
-        className="fixed bottom-4 right-4 rounded-full w-14 h-14 z-50 shadow-xl bg-white text-black hover:bg-gray-100 transition cursor-pointer"
+        disabled={loading}
+        className="fixed bottom-4 right-4 rounded-full w-14 h-14 z-50 shadow-xl bg-white text-black hover:bg-gray-100 transition cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
       >
-        <MessageCircle className="w-6 h-6" />
+        {loading ? (
+          <Loader2 className="animate-spin w-5 h-5" />
+        ) : (
+          <MessageCircle className="w-6 h-6" />
+        )}
       </Button>
 
       {user && chatOpen && (
