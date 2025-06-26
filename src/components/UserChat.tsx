@@ -19,7 +19,7 @@ type Message = {
 };
 
 export default function UserChat() {
-  const { user } = useAuth();
+  const { user, loading } = useAuth();
   const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [newMsg, setNewMsg] = useState("");
@@ -75,16 +75,24 @@ export default function UserChat() {
     setNewMsg("");
   };
 
+  // const handleClickChatIcon = () => {
+  //   if (!user) {
+  //     toast.error("Please log in to chat.");
+  //     return;
+  //   }
+  //   setChatOpen((prev) => !prev);
+  //   setTimeout(() => {
+  //     const container = scrollRef.current;
+  //     if (container) container.scrollTop = container.scrollHeight;
+  //   }, 100);
+  // };
   const handleClickChatIcon = () => {
+    if (loading) return;
     if (!user) {
       toast.error("Please log in to chat.");
       return;
     }
     setChatOpen((prev) => !prev);
-    setTimeout(() => {
-      const container = scrollRef.current;
-      if (container) container.scrollTop = container.scrollHeight;
-    }, 100);
   };
 
   const scrollToBottom = () => {
