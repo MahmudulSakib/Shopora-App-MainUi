@@ -9,10 +9,6 @@ import NavMenu from "@/components/NavMenu";
 import { useAuth } from "@/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 
-export const metadata = {
-  title: "Product",
-};
-
 type Product = {
   id: string;
   name: string;

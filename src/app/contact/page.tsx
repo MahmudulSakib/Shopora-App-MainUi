@@ -11,10 +11,6 @@ import {
 import NavMenu from "@/components/NavMenu";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "Contact",
-};
-
 export default function ContactPage() {
   return (
     <>
